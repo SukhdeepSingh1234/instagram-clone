@@ -14,7 +14,7 @@ const firebaseConfig = {
 
 const firebaseApp =firebase.initializeApp(firebaseConfig);
 const db=firebaseApp.firestore()
-const auth=firebase.auth();
+const auth=firebase.auth(); // it is used to authenticate the user while login, register ,etc
 const storage=firebase.storage();
 
 export {db,auth,storage}
