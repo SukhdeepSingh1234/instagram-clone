@@ -4,6 +4,7 @@ import './App.css';
 import Posts from './components/Posts';
 import {db,auth} from './firebase';
 import {Button,Input,Box,Typography,Modal,Avatar } from '@mui/material';
+import ImageUpload from './components/ImageUpload';
 
 const style = {
   position: 'absolute',
@@ -80,7 +81,12 @@ function App() {
 
   return (
     <div className="app">
-      <div>
+
+      {user?.displayName?( // note there are double checks in a single ternary operator condition to firstly chech if the user exists if yes then get the display name after the render image Upload
+        <ImageUpload username={user.displayName} />
+      ):(
+        <h3>Login to Upload Posts</h3>
+      )}
       
       <Modal
         open={open}
@@ -154,7 +160,7 @@ function App() {
         </Box>
       </Modal>
       
-    </div>
+
        <div className="app__header">
         <img
           className="app__headerImage"
