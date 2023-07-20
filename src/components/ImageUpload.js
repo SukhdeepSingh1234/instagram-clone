@@ -7,6 +7,7 @@ function ImageUpload({username}) {
     const [caption,setCaption]=useState('')
     const [image,setImage]=useState(null)
     const [progress,setProgress]=useState(0)
+    const [url, setUrl] = useState("");
     
     const handleChange= (e)=>{
         if(e.target.files[0]){
@@ -35,6 +36,7 @@ function ImageUpload({username}) {
               .child(image.name)
               .getDownloadURL()
               .then((url) => {
+                setUrl(url);
                 // post image inside db
                 db.collection("posts").add({
                   imageUrl: url,
