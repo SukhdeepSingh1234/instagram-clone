@@ -8,8 +8,11 @@
 .app__header{
   object-fit: contain;
   background-color: white;
-  padding: 20px;
+  padding: 10px;
   border-bottom: 1px solid lightgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .app__headerImage{
   height: 54px;
@@ -24,13 +27,18 @@
   background-color: white;
   border: 1px solid lightgray;
 }
+.app_posts{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .app__loginHome {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 20px;
+  padding: 10px;
   background-color: white;
-  border: 1px solid lightgray;
 }
 .app__headerRight {
   display: flex;

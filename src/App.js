@@ -176,14 +176,15 @@ function App() {
           </form>
         )}
         </div>
-        {/* <Button onClick={handleOpen}>Login</Button>
-        <Button onClick={handleRegisterOpen}>Register</Button> */}
+        <div className='app_posts' >
         {
           posts.map(({id,post})=>(
             // key helps in not re-rendering the post or the data if as it knows that the particular id is added then it dont refreshes the whole list rather it knows whih post is created and render only that it is good for efficiency
             <Posts key={id} icon={post.icon} username={post.username} caption={post.caption} imageUrl={post.imageUrl} />
           ))
         }
+        </div>
+        
         {user?.displayName?( // note there are double checks in a single ternary operator condition to firstly chech if the user exists if yes then get the display name after the render image Upload
         <ImageUpload username={user.displayName} />
         ):(
