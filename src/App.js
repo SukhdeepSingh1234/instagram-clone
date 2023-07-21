@@ -81,13 +81,6 @@ function App() {
 
   return (
     <div className="app">
-
-      {user?.displayName?( // note there are double checks in a single ternary operator condition to firstly chech if the user exists if yes then get the display name after the render image Upload
-        <ImageUpload username={user.displayName} />
-      ):(
-        <h3>Login to Upload Posts</h3>
-      )}
-      
       <Modal
         open={open}
         onClose={() => setOpen(false)}
@@ -191,6 +184,11 @@ function App() {
             <Posts key={id} icon={post.icon} username={post.username} caption={post.caption} imageUrl={post.imageUrl} />
           ))
         }
+        {user?.displayName?( // note there are double checks in a single ternary operator condition to firstly chech if the user exists if yes then get the display name after the render image Upload
+        <ImageUpload username={user.displayName} />
+        ):(
+          <h3>Login to Upload Posts</h3>
+        )}
       
     </div>
   );

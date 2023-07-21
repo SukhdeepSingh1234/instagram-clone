@@ -2,6 +2,7 @@ import { Button } from '@mui/material'
 import React, { useState } from 'react'
 import { db,storage } from '../firebase'
 import firebase from 'firebase'
+import "../styles/Imageupload.css"
 
 function ImageUpload({username}) {
     const [caption,setCaption]=useState('')
@@ -54,7 +55,7 @@ function ImageUpload({username}) {
       };
 
   return (
-    <div>
+    <div className='imageupload' >
        <progress value={progress} max="100"/>
       <input type='text' placeholder='Enter a caption' onChange={(e)=> setCaption(e.target.value)} value={caption} />
       <input type='file' onChange={handleChange} />
